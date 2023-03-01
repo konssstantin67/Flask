@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+Users list
+{% endblock %}
+{% block body %}
+<h1>Users</h1>
+<div>
+    <ul>
+        {% for user_id in users %}
+        <li>
+            <a href="{{ url_for('users_app.details', user_id=user_id) }}">
+                {{ users[user_id] }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
